@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Momeants.Mobile.Views.Auth.WelcomePage"
+             BackgroundColor="#000000"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="*, Auto, Auto, 60">
+        <Label Grid.Row="0" Text="Momeants" FontSize="48" FontAttributes="Bold"
+               TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <Button Grid.Row="1" Text="Sign In" Command="{Binding SignInCommand}"
+                BackgroundColor="White" TextColor="Black"
+                CornerRadius="12" HeightRequest="52"
+                Margin="24,0,24,12" />
+
+        <Button Grid.Row="2" Text="Create Account" Command="{Binding CreateAccountCommand}"
+                BackgroundColor="Transparent" TextColor="White"
+                BorderColor="White" BorderWidth="1"
+                CornerRadius="12" HeightRequest="52"
+                Margin="24,0,24,0" />
+    </Grid>
+</ContentPage>

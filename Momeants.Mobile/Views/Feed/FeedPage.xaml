@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Momeants.Mobile.Views.Feed.FeedPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#000000">
+
+    <Grid>
+        <!-- Full-screen image -->
+        <Image Source="{Binding CurrentItem.MediaUrl}"
+               Aspect="AspectFill"
+               VerticalOptions="Fill"
+               HorizontalOptions="Fill" />
+
+        <!-- Tap navigation: left = previous, right = next -->
+        <Grid ColumnDefinitions="*, *">
+            <BoxView Grid.Column="0" BackgroundColor="Transparent">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PreviousCommand}" />
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <BoxView Grid.Column="1" BackgroundColor="Transparent">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NextCommand}" />
+                </BoxView.GestureRecognizers>
+            </BoxView>
+        </Grid>
+
+        <!-- Caption overlay -->
+        <StackLayout VerticalOptions="End" Padding="20,0,20,80">
+            <Label Text="{Binding CurrentItem.Owner.DisplayName}"
+                   TextColor="White" FontAttributes="Bold" FontSize="16" />
+            <Label Text="{Binding CurrentItem.Caption}"
+                   TextColor="White" FontSize="14" />
+        </StackLayout>
+
+        <!-- Loading indicator -->
+        <ActivityIndicator IsRunning="{Binding IsBusy}" Color="White"
+                           HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <!-- Top bar -->
+        <Grid Padding="20,60,20,0" VerticalOptions="Start" ColumnDefinitions="*, Auto">
+            <Label Grid.Column="0" Text="Momeants" TextColor="White" FontAttributes="Bold" FontSize="20" />
+            <Button Grid.Column="1" Text="+" Command="{Binding CreateMomeantCommand}"
+                    BackgroundColor="White" TextColor="Black"
+                    CornerRadius="20" HeightRequest="40" WidthRequest="40" Padding="0" />
+        </Grid>
+    </Grid>
+</ContentPage>

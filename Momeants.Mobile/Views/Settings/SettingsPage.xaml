@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Momeants.Mobile.Views.Settings.SettingsPage"
+             Title="Settings"
+             BackgroundColor="#000000">
+    <StackLayout Padding="24" Spacing="16">
+        <Label Text="Settings" TextColor="White" FontSize="24" FontAttributes="Bold" />
+
+        <Label Text="Profile visibility" TextColor="#888888" />
+        <Picker TextColor="White" BackgroundColor="#1A1A1A"
+                SelectedItem="{Binding ProfileVisibility}">
+            <Picker.Items>
+                <x:String>public</x:String>
+                <x:String>friends</x:String>
+                <x:String>close_friends</x:String>
+                <x:String>private</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Button Text="Save" Command="{Binding SaveCommand}"
+                BackgroundColor="White" TextColor="Black" CornerRadius="12" HeightRequest="52" />
+        <Button Text="Sign Out" Command="{Binding SignOutCommand}"
+                BackgroundColor="Transparent" TextColor="#FF4444" />
+    </StackLayout>
+</ContentPage>

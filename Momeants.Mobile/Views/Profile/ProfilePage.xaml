@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Momeants.Mobile.Views.Profile.ProfilePage"
+             Title="Profile"
+             BackgroundColor="#000000">
+
+    <StackLayout Padding="24" Spacing="16">
+        <ActivityIndicator IsRunning="{Binding IsBusy}" Color="White" />
+
+        <Label Text="{Binding User.DisplayName}" TextColor="White"
+               FontSize="24" FontAttributes="Bold"
+               HorizontalOptions="Center" />
+        <Label Text="{Binding User.Username, StringFormat='@{0}'}" TextColor="#888888"
+               HorizontalOptions="Center"
+               IsVisible="{Binding User.Username, Converter={StaticResource IsNotNullConverter}}" />
+        <Label Text="{Binding User.Bio}" TextColor="#CCCCCC"
+               HorizontalOptions="Center"
+               IsVisible="{Binding User.Bio, Converter={StaticResource IsNotNullConverter}}" />
+
+        <Button Text="Edit Profile" Command="{Binding EditProfileCommand}"
+                BackgroundColor="#1A1A1A" TextColor="White" CornerRadius="12" />
+        <Button Text="Sign Out" Command="{Binding SignOutCommand}"
+                BackgroundColor="Transparent" TextColor="#FF4444" />
+    </StackLayout>
+</ContentPage>

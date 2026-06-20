@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Momeants.Mobile.Views.People.ImportantPeoplePage"
+             Title="Important People"
+             BackgroundColor="#000000">
+    <StackLayout Padding="24">
+        <Label Text="Important People" TextColor="White" FontSize="24" FontAttributes="Bold" Margin="0,0,0,16" />
+        <ActivityIndicator IsRunning="{Binding IsBusy}" Color="White" />
+        <CollectionView ItemsSource="{Binding Items}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="0,8">
+                        <Label Text="{Binding DisplayName}" TextColor="White" FontSize="16" />
+                        <Label Text="{Binding Category}" TextColor="#888888" FontSize="13" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

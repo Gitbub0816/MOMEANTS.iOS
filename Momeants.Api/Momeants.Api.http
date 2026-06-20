@@ -1,0 +1,6 @@
+@Momeants.Api_HostAddress = http://localhost:5269
+
+GET {{Momeants.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

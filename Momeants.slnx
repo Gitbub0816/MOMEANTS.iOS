@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Momeants.Api/Momeants.Api.csproj" />
+  <Project Path="Momeants.Mobile/Momeants.Mobile.csproj" />
+  <Project Path="Momeants.Shared/Momeants.Shared.csproj" />
+  <Project Path="Momeants.Tests/Momeants.Tests.csproj" />
+</Solution>

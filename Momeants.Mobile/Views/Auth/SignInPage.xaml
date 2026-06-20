@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Momeants.Mobile.Views.Auth.SignInPage"
+             Title="Sign In"
+             BackgroundColor="#000000">
+
+    <Grid RowDefinitions="Auto, *, Auto" Padding="24">
+        <Label Grid.Row="0" Text="Enter your email or phone" FontSize="24" FontAttributes="Bold"
+               TextColor="White" Margin="0,60,0,40" />
+
+        <StackLayout Grid.Row="1" Spacing="16">
+            <Entry Placeholder="Email or phone number"
+                   PlaceholderColor="#888888"
+                   TextColor="White"
+                   BackgroundColor="#1A1A1A"
+                   Text="{Binding Identifier}"
+                   Keyboard="Email"
+                   HeightRequest="52" />
+
+            <Label Text="{Binding ErrorMessage}" TextColor="#FF4444" IsVisible="{Binding HasError}" />
+        </StackLayout>
+
+        <Button Grid.Row="2" Text="Continue" Command="{Binding ContinueCommand}"
+                BackgroundColor="White" TextColor="Black"
+                CornerRadius="12" HeightRequest="52"
+                IsEnabled="{Binding IsBusy, Converter={StaticResource InvertBoolConverter}}"
+                Margin="0,0,0,40" />
+    </Grid>
+</ContentPage>
