@@ -1,0 +1,13 @@
+name = "momeants-jwt-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+JWT_ISSUER = "https://jwt.momeants.com"
+JWT_AUDIENCE = "momeants-mobile"
+ACCESS_TOKEN_TTL_SECONDS = "900"
+REFRESH_TOKEN_TTL_SECONDS = "2592000"
+
+# Add secrets via: wrangler secret put JWT_SECRET
+# Add secrets via: wrangler secret put WORKER_API_KEY
