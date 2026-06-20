@@ -44,7 +44,8 @@ public class CreateMomeantViewModel : BaseViewModel
     {
         try
         {
-            var result = await MediaPicker.Default.PickPhotoAsync();
+            var results = await MediaPicker.Default.PickPhotosAsync();
+            var result = results?.FirstOrDefault();
             if (result is null) return;
 
             _selectedStream = await result.OpenReadAsync();

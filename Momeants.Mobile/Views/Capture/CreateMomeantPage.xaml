@@ -8,15 +8,17 @@
     <ScrollView>
         <StackLayout Padding="24" Spacing="16">
             <!-- Photo picker -->
-            <Frame BackgroundColor="#1A1A1A" CornerRadius="12" HeightRequest="300" Padding="0"
-                   HasShadow="False">
+            <Border BackgroundColor="#1A1A1A" StrokeThickness="0" HeightRequest="300">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
                 <Grid>
                     <Image Source="{Binding SelectedImage}" Aspect="AspectFill" IsVisible="{Binding SelectedImage, Converter={StaticResource IsNotNullConverter}}" />
                     <Button Text="Tap to choose photo" Command="{Binding PickPhotoCommand}"
                             BackgroundColor="Transparent" TextColor="#888888"
                             IsVisible="{Binding SelectedImage, Converter={StaticResource IsNullConverter}}" />
                 </Grid>
-            </Frame>
+            </Border>
 
             <!-- Caption -->
             <Editor Placeholder="Add a caption..." PlaceholderColor="#888888"
